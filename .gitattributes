@@ -1,0 +1,24 @@
+# Preserve line endings for ClickOnce files
+*.application binary
+*.manifest binary
+*.deploy binary
+
+# Text files can use auto line ending conversion
+*.md text
+*.txt text
+*.js text
+*.css text
+*.html text
+*.json text
+*.ts text
+*.tsx text
+*.jsx text
+
+# Binary files
+*.exe binary
+*.dll binary
+*.ico binary
+*.png binary
+*.jpg binary
+*.gif binary
+*.pdf binary
