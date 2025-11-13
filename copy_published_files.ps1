@@ -126,4 +126,4 @@ if ($gitResponse -eq "s" -or $gitResponse -eq "S") {
 }
 
 Write-Host ""
-Write-Host "🎉 Script concluído! Os arquivos estão prontos para o Vercel." -ForegroundColor Green
+Write-Host "Script concluido! Os arquivos estao prontos para o Vercel." -ForegroundColor Green
