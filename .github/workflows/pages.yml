@@ -30,6 +30,8 @@ jobs:
           mkdir -p _site
           cp -r public/* _site/
           cp index.html _site/ 2>/dev/null || echo "index.html not in root"
+          # Criar .nojekyll para desabilitar processamento Jekyll
+          touch _site/.nojekyll
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

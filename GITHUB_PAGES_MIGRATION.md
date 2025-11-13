@@ -4,9 +4,10 @@
 
 1. **Vá para**: https://github.com/kduribeiro1/appsclickonce/settings/pages
 2. **Source**: Selecione "**GitHub Actions**"
-3. **Save**
+3. **⚠️ IMPORTANTE**: NÃO usar Jekyll - usamos **Static HTML** para preservar arquivos ClickOnce
+4. **Save**
 
-O workflow já foi enviado e está pronto!
+O workflow já foi enviado e está configurado para Static HTML!
 
 ## ✅ Passo 2: Republicar no Visual Studio
 
@@ -35,8 +36,9 @@ Após o deploy (alguns minutos), teste:
 https://kduribeiro1.github.io/appsclickonce/instaladores/ContatosLeonidio/ContatosLeonidio.application
 ```
 
-## 🎯 Por que GitHub Pages vai funcionar:
+## 🎯 Por que GitHub Pages (Static HTML) vai funcionar:
 
+- ✅ **Static HTML**: Arquivo `.nojekyll` desabilita processamento Jekyll
 - ✅ **Não modifica arquivos**: Serve exatamente como enviado
 - ✅ **Headers corretos**: Configuração adequada para ClickOnce  
 - ✅ **Deploy automático**: Via GitHub Actions
