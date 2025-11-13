@@ -185,12 +185,6 @@
       ]
     }
   ],
-  "functions": {
-    "public/instaladores/**": {
-      "memory": 128,
-      "maxDuration": 10
-    }
-  },
   "trailingSlash": false,
   "cleanUrls": false,
   "buildCommand": "echo 'No build needed for static files'",
