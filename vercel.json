@@ -118,12 +118,19 @@
           "value": ""
         }
       ]
-    }
-  ],
-  "rewrites": [
+    },
     {
-      "source": "/instaladores/(.*)",
-      "destination": "/instaladores/$1"
+      "source": "/instaladores/(.*)\\.html$",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
+      ]
     }
   ],
   "trailingSlash": false,
