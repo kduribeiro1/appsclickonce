@@ -1,49 +1,131 @@
 {
   "headers": [
     {
-      "source": "/(.*)\\.application$",
+      "source": "/instaladores/(.*)\\.application$",
       "headers": [
         {
           "key": "Content-Type",
           "value": "application/x-ms-application"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        },
+        {
+          "key": "Content-Encoding",
+          "value": ""
         }
       ]
     },
     {
-      "source": "/(.*)\\.manifest$",
+      "source": "/instaladores/(.*)\\.manifest$",
       "headers": [
         {
           "key": "Content-Type",
           "value": "application/x-ms-manifest"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        },
+        {
+          "key": "Content-Encoding",
+          "value": ""
         }
       ]
     },
     {
-      "source": "/(.*)\\.deploy$",
+      "source": "/instaladores/(.*)\\.deploy$",
       "headers": [
         {
           "key": "Content-Type",
           "value": "application/octet-stream"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        },
+        {
+          "key": "Content-Encoding",
+          "value": ""
         }
       ]
     },
     {
-      "source": "/(.*)\\.dll$",
+      "source": "/instaladores/(.*)\\.dll$",
       "headers": [
         {
           "key": "Content-Type",
           "value": "application/octet-stream"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        },
+        {
+          "key": "Content-Encoding",
+          "value": ""
         }
       ]
     },
     {
-      "source": "/(.*)\\.exe$",
+      "source": "/instaladores/(.*)\\.exe$",
       "headers": [
         {
           "key": "Content-Type",
           "value": "application/octet-stream"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        },
+        {
+          "key": "Content-Encoding",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "source": "/instaladores/(.*)\\.config$",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/xml"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        },
+        {
+          "key": "Content-Encoding",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "source": "/instaladores/(.*)\\.json$",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        },
+        {
+          "key": "Content-Encoding",
+          "value": ""
         }
       ]
     }
-  ]
+  ],
+  "rewrites": [
+    {
+      "source": "/instaladores/(.*)",
+      "destination": "/instaladores/$1"
+    }
+  ],
+  "trailingSlash": false,
+  "cleanUrls": false
 }

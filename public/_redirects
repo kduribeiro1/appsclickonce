@@ -1,0 +1,2 @@
+# ClickOnce specific redirects - serve files as-is without processing
+/instaladores/*  /instaladores/:splat  200
