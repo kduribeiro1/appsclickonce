@@ -1,5 +1,5 @@
-# Deploy ClickOnce via GitHub Pages
-name: Deploy to GitHub Pages
+# Deploy Static HTML to GitHub Pages
+name: Deploy Static Site to Pages
 
 on:
   push:
@@ -16,7 +16,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,24 +28,21 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
         
-      - name: Copy files to build directory
+      - name: Prepare static files
         run: |
           mkdir -p _site
+          # Copiar todos os arquivos do diretório public
           cp -r public/* _site/
-          cp index.html _site/ 2>/dev/null || echo "index.html not in root"
-          # Criar .nojekyll para desabilitar processamento Jekyll
+          # Copiar index.html da raiz se existir
+          cp index.html _site/ 2>/dev/null || echo "No root index.html found"
+          # Criar .nojekyll para forçar modo static (sem processamento Jekyll)
           touch _site/.nojekyll
+          # Verificar se arquivos ClickOnce foram copiados
+          ls -la _site/instaladores/ContatosLeonidio/ || echo "ClickOnce files not found yet"
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
+        
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

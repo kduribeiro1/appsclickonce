@@ -4,10 +4,10 @@
 
 1. **Vá para**: https://github.com/kduribeiro1/appsclickonce/settings/pages
 2. **Source**: Selecione "**GitHub Actions**"
-3. **⚠️ IMPORTANTE**: NÃO usar Jekyll - usamos **Static HTML** para preservar arquivos ClickOnce
+3. **⚠️ IMPORTANTE**: Workflow configurado como **Static HTML** (arquivo `static.yml`)
 4. **Save**
 
-O workflow já foi enviado e está configurado para Static HTML!
+O workflow static.yml já foi enviado e está configurado para Static HTML!
 
 ## ✅ Passo 2: Republicar no Visual Studio
 
@@ -47,7 +47,7 @@ https://kduribeiro1.github.io/appsclickonce/instaladores/ContatosLeonidio/Contat
 
 ## 📋 Status da Migração:
 
-- ✅ Workflow do GitHub Actions criado
+- ✅ Workflow Static HTML criado (`static.yml`)
 - ✅ Script de republicação pronto
 - ⏳ Aguardando: Configuração do GitHub Pages
 - ⏳ Aguardando: Republicação no Visual Studio
