@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "/(.*)\\.application",
+      "source": "/(.*)\\.application$",
       "headers": [
         {
           "key": "Content-Type",
@@ -10,7 +10,7 @@
       ]
     },
     {
-      "source": "/(.*)\\.manifest",
+      "source": "/(.*)\\.manifest$",
       "headers": [
         {
           "key": "Content-Type",
@@ -19,7 +19,25 @@
       ]
     },
     {
-      "source": "/(.*)\\.deploy",
+      "source": "/(.*)\\.deploy$",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/octet-stream"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.dll$",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/octet-stream"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.exe$",
       "headers": [
         {
           "key": "Content-Type",
